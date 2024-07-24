@@ -1,14 +1,17 @@
 import clsx from "clsx";
+import { ReactNode } from "react";
 import { LiaSmileWink } from "react-icons/lia";
 
 type PropsType = {
   playerScores: { playerOne: number; playerTwo: number };
+  children?: ReactNode;
 };
 
-const Score = ({ playerScores }: PropsType) => {
+const Score = ({ children, playerScores }: PropsType) => {
   return (
-    <div className="relative lg:absolute w-[200%] top-1/2 -translate-y-1/2 -left-1/2 flex justify-between">
+    <div className="flex justify-between items-center gap-5">
       <PlayerScoreCard player={1} score={playerScores.playerOne} />
+      {children && children}
       <PlayerScoreCard player={2} score={playerScores.playerTwo} />
     </div>
   );

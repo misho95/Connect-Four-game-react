@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MenuPage from "./pages/menu-page";
-import Game from "./components/game";
+import Play from "./components/play";
 
 function App() {
   const router = createBrowserRouter([
@@ -10,11 +10,11 @@ function App() {
     },
     {
       path: "/vscpu",
-      element: <Game />,
+      element: <Play type="cpu" />,
     },
     {
       path: "/vsplayer",
-      element: "vsplayer",
+      element: <Play type="player" />,
     },
     {
       path: "/rules",
